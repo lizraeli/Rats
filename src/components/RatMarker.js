@@ -6,7 +6,8 @@ const RatMarker = ({ rat, image, onRatClick, selected }) => (
     className={selected ? "rat selected" : "rat"}
     alt=""
     src={image}
-    onClick={() => onRatClick(rat)}
+    
+    onMouseDown={() => onRatClick(rat)}
   />
 );
 

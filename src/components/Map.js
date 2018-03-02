@@ -53,7 +53,6 @@ class Map extends React.Component {
   };
 
   render() {
-    const { defaultCenter, defaultZoom } = defaultOptions;
     const { rats, mapOptions, selectedRatId } = this.state;
     const { zoom } = mapOptions;
 
@@ -62,11 +61,10 @@ class Map extends React.Component {
     return (
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: "AIzaSyCm5JPCHnaom__2KMMfZez3eG2r8DeTIXE"
+          key: "AIzaSyCAHyClSI14MU4M4S30xHugTYoj_3viEX0"
         }}
-        defaultCenter={defaultCenter}
-        defaultZoom={defaultZoom}
         onChange={this.onMapChange}
+        {...defaultOptions}
         {...mapOptions}
       >
         {rats.map(rat => (
