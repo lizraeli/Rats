@@ -7,6 +7,7 @@ const formatDate = date => {
   const day = dateArr[2];
   return `${month}/${day}/${year}`;
 };
+
 const RatInfo = rat => {
   const date = rat.created_date ? rat.created_date.split("T")[0] : "-";
   const formattedDate = formatDate(date);

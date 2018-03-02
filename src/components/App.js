@@ -17,13 +17,13 @@ class App extends Component {
     console.log("selected: ", selectedRat);
     return (
       <div className="App">
-        <h1 className="App-title">Rats! 2018</h1>
-
+        <h1 className="App-title">Rats!</h1>
+        <h3> <i> All the latest rat sightings </i> </h3>
         <div id="MapContainer">
           <Map onRatClick={this.onRatClick} />
         </div>
         <div id="RatInfo">
-          {selectedRat ? RatInfo(selectedRat) : "Choose a rat"}
+          {selectedRat ? RatInfo(selectedRat) : <strong> Choose a rat </strong>}
         </div>
       </div>
     );

@@ -29,7 +29,7 @@ class Map extends React.Component {
     axios
       .get(
         "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$$app_token=YFMHCkkJQzF7LJWzQx0jGFFiT" +
-          "&&$where=descriptor='Rat Sighting' AND created_date > '2017-01-20T12:00:00'"
+          "&&$where=descriptor='Rat Sighting' AND created_date > '2018-01-20T12:00:00'"
       )
       .then(res => {
         this.setState({
