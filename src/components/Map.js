@@ -17,19 +17,18 @@ class Map extends React.Component {
     rats: []
   };
 
-  onRatClick = rat => {
-    console.log(rat);
-  };
-
   shouldComponentUpdate(nextProps, nextState) {
+    // Since this component does not depend on props, we only rerender when state changes
+    // So we avoid unneeded renders when parent (App) component rerenders
     return this.state !== nextState;
   }
 
   componentDidMount() {
+    // Get the 200 latest rat sightings
     axios
       .get(
         "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$$app_token=YFMHCkkJQzF7LJWzQx0jGFFiT" +
-          "&&$where=descriptor='Rat Sighting' AND created_date > '2018-01-20T12:00:00'"
+          "&$where=descriptor='Rat Sighting'&$limit=200&$order=created_date DESC"
       )
       .then(res => {
         this.setState({
