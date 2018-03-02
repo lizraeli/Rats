@@ -17,7 +17,7 @@ class App extends Component {
     console.log("selected: ", selectedRat);
     return (
       <div className="App">
-        <h1 className="App-title">Rats!</h1>
+        <div className="App-title">Rats!</div>
         <h3> <i> All the latest rat sightings </i> </h3>
         <div id="MapContainer">
           <Map onRatClick={this.onRatClick} />

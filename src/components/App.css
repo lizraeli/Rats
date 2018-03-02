@@ -1,7 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Droid+Serif:400,700,400italic,700italic");
+
+body {
+  background-color: #f9f7f1;
+  font-family: "Droid Serif", serif;
+  font-size: 14px;
+}
 
 .App {
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,20 +15,31 @@
 
 #MapContainer {
   height: 400px;
-  width: 100%;
+  width: 50%;
   padding: 5px;
   margin: 5px;
 }
 
 #RatInfo {
+  width: 50%;
+  line-height: 1.6;
+  font-size: 1.5em;
   margin: 5px;
   padding: 5px;
-  border-style: outset;
 }
 
 .App-title {
-  border-style: outset;
-  /* width: 25%; */
-  font-size: 1.5em;
-  padding: 5px;
+  font-size: 4em;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+@media (max-width: 480px) {
+  #MapContainer {
+    width: 100%;
+  }
+  #RatInfo {
+    width: 100%;
+  }
 }
