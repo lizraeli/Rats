@@ -1,5 +1,6 @@
 {
-  "name": "parks",
+  "name": "rat-sightings",
+  "author": "Lev Izraelit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
