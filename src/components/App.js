@@ -16,13 +16,15 @@ class App extends Component {
     const { selectedRat } = this.state;
     console.log("selected: ", selectedRat);
     return (
-      <div className="App">
-        <div className="App-title">Rats!</div>
-        <h3> <i> All the latest rat sightings </i> </h3>
-        <div id="MapContainer">
+      <div className="app">
+        <div className="app-title">Rats!</div>
+        <h3>
+          <i> All the latest rat sightings </i>
+        </h3>
+        <div id="map-container">
           <Map onRatClick={this.onRatClick} />
         </div>
-        <div id="RatInfo">
+        <div id="rat-info">
           {selectedRat ? RatInfo(selectedRat) : <strong> Choose a rat </strong>}
         </div>
       </div>

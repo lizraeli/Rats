@@ -2,3 +2,7 @@
   cursor: pointer;
   transform: scale(1.25);
 }
+
+.rat.selected {
+  transform: scale(1.5);
+}

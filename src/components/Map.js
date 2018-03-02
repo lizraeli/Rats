@@ -14,7 +14,8 @@ const defaultOptions = {
 class Map extends React.Component {
   state = {
     mapOptions: defaultOptions,
-    rats: []
+    rats: [],
+    selectedRatId: null
   };
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -34,6 +35,9 @@ class Map extends React.Component {
         this.setState({
           rats: res.data.filter(rat => rat.location && rat.location.coordinates)
         });
+      })
+      .catch(err => {
+        console.log("error fetching rats");
       });
   }
 
@@ -42,11 +46,17 @@ class Map extends React.Component {
       mapOptions: options
     });
   };
-  render() {
-    const { rats, mapOptions } = this.state;
-    const { defaultCenter, defaultZoom } = defaultOptions;
 
+  onRatClick = rat => {
+    this.props.onRatClick(rat);
+    this.setState({ selectedRatId: rat.unique_key });
+  };
+
+  render() {
+    const { defaultCenter, defaultZoom } = defaultOptions;
+    const { rats, mapOptions, selectedRatId } = this.state;
     const { zoom } = mapOptions;
+
     const image = zoom >= 16 ? ratImageM : zoom >= 14 ? ratImageS : ratImageXS;
 
     return (
@@ -61,12 +71,13 @@ class Map extends React.Component {
       >
         {rats.map(rat => (
           <RatMarker
-            key={rat.unique_key}
             rat={rat}
             image={image}
+            selected={rat.unique_key === selectedRatId}
+            onRatClick={() => this.onRatClick(rat)}
+            key={rat.unique_key}
             lat={rat.location.coordinates[1]}
             lng={rat.location.coordinates[0]}
-            onRatClick={this.props.onRatClick}
           />
         ))}
       </GoogleMapReact>

@@ -6,21 +6,28 @@ body {
   font-size: 14px;
 }
 
-.App {
+.app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-#MapContainer {
+.app-title {
+  font-size: 4em;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+#map-container {
   height: 400px;
   width: 50%;
   padding: 5px;
   margin: 5px;
 }
 
-#RatInfo {
+#rat-info {
   width: 50%;
   line-height: 1.6;
   font-size: 1.5em;
@@ -28,18 +35,11 @@ body {
   padding: 5px;
 }
 
-.App-title {
-  font-size: 4em;
-  font-family: "Playfair Display", serif;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
 @media (max-width: 480px) {
-  #MapContainer {
+  #map-container {
     width: 100%;
   }
-  #RatInfo {
+  #rat-info {
     width: 100%;
   }
 }
