@@ -28,6 +28,8 @@ body {
 }
 
 #rat-info {
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
   width: 50%;
   line-height: 1.6;
   font-size: 1.5em;

@@ -14,9 +14,9 @@ const RatInfo = rat => {
 
   return (
     <div>
-      <strong> Spotted on </strong>: {formattedDate} <br />
-      <strong> Location type </strong>: {rat.location_type} <br />
-      <strong> Address: </strong> {rat.incident_address}
+      Spotted on: {formattedDate} <br />
+      Location type: {rat.location_type} <br />
+      Address: {rat.incident_address}
     </div>
   );
 };
