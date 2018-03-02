@@ -19,7 +19,7 @@ class App extends Component {
       <div className="app">
         <div className="app-title">Rats!</div>
         <h3>
-          <i> All the latest rat sightings </i>
+          <i> All the latest rat sightings in NYC </i>
         </h3>
         <div id="map-container">
           <Map onRatClick={this.onRatClick} />
