@@ -9,7 +9,6 @@ body {
 .app {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -40,8 +39,18 @@ body {
 @media (max-width: 480px) {
   #map-container {
     width: 100%;
+    height: 300px;
+    padding: 1px;
+    margin: 1px;
   }
   #rat-info {
     width: 100%;
+  }
+  .app-title {
+    font-size: 3em;
+  }
+
+  #rat-info {
+    font-size: 1.2em;
   }
 }
