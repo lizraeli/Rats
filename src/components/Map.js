@@ -48,6 +48,7 @@ class Map extends React.Component {
   };
 
   onRatClick = rat => {
+    console.log("clicked on: ", rat);
     this.props.onRatClick(rat);
     this.setState({ selectedRatId: rat.unique_key });
   };
@@ -61,8 +62,9 @@ class Map extends React.Component {
     return (
       <GoogleMapReact
         bootstrapURLKeys={{
-          key: "AIzaSyCAHyClSI14MU4M4S30xHugTYoj_3viEX0"
+          key: "AIzaSyCAHyClSI14MU4M4S30xHugTYoj_3viEX0&v=3.31"
         }}
+        options={this.createMapOptions}
         onChange={this.onMapChange}
         {...defaultOptions}
         {...mapOptions}
@@ -72,7 +74,7 @@ class Map extends React.Component {
             rat={rat}
             image={image}
             selected={rat.unique_key === selectedRatId}
-            onRatClick={() => this.onRatClick(rat)}
+            onRatClick={this.onRatClick}
             key={rat.unique_key}
             lat={rat.location.coordinates[1]}
             lng={rat.location.coordinates[0]}
