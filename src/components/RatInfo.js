@@ -10,7 +10,7 @@ const formatDate = date => {
 
 const RatInfo = rat => {
   const date = rat.created_date ? rat.created_date.split("T")[0] : "-";
-  const formattedDate = formatDate(date);
+  const formattedDate = date ? formatDate(date) : "-";
 
   return (
     <div>
