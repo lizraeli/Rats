@@ -28,7 +28,7 @@ class Map extends React.Component {
     // Get the 200 latest rat sightings
     axios
       .get(
-        "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?$$app_token=YFMHCkkJQzF7LJWzQx0jGFFiT" +
+        "https://data.cityofnewyork.us/resource/fhrw-4uyv.json?" +
           "&$where=descriptor='Rat Sighting'&$limit=200&$order=created_date DESC"
       )
       .then(res => {
