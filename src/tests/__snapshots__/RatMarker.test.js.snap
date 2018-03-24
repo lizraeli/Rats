@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render a non-selected Rat Marker without the 'selected' className 1`] = `
+<img
+  alt=""
+  className="rat"
+  onClick={[Function]}
+  src="rat_s.png"
+/>
+`;
+
+exports[`should render a single image as a Rat Marker 1`] = `
+<img
+  alt=""
+  className="rat"
+  onClick={[Function]}
+  src="rat_s.png"
+/>
+`;
+
+exports[`should renders a selected Rat Marker with the 'selected' className 1`] = `
+<img
+  alt=""
+  className="rat selected"
+  onClick={[Function]}
+  src="rat_s.png"
+/>
+`;
