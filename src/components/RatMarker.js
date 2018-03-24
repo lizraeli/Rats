@@ -1,20 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
+import "../styles/RatMarker.css";
 
-import "./RatMarker.css";
-
-/**
- * Info about a rat sighting
- * @typedef {Object} Rat
-*/
-
-/**
- * @function RatMarker
- * @param  {Object} rat
- * @param  {string} image
- * @param  {Function} onRatClick
- * @param  {boolean} selected 
- * @return {JSX.Element} 
- */
 const RatMarker = ({ rat, image, onRatClick, selected }) => (
   <img
     className={selected ? "rat selected" : "rat"}
@@ -23,5 +10,12 @@ const RatMarker = ({ rat, image, onRatClick, selected }) => (
     onClick={() => onRatClick(rat)}
   />
 );
+
+RatMarker.propTypes = {
+  rat: PropTypes.object.isRequired,
+  image: PropTypes.string.isRequired,
+  onRatClick: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired
+};
 
 export default RatMarker;

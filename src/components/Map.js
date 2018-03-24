@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import PropTypes from "prop-types";
 import ratImageXS from "../rat_images/rat_xs.png";
 import ratImageS from "../rat_images/rat_s.png";
 import ratImageM from "../rat_images/rat_m.png";
@@ -24,7 +25,7 @@ class Map extends React.Component {
   onRatClick = rat => {
     console.log("clicked on: ", rat);
     const { selectedRat } = this.props;
-    
+
     if (!selectedRat || selectedRat.unique_key !== rat.unique_key) {
       this.props.onRatClick(rat);
     } else {
@@ -54,7 +55,9 @@ class Map extends React.Component {
           <RatMarker
             rat={rat}
             image={image}
-            selected={selectedRat && selectedRat.unique_key === rat.unique_key}
+            selected={
+              !!selectedRat && selectedRat.unique_key === rat.unique_key
+            }
             onRatClick={this.onRatClick}
             key={rat.unique_key}
             lat={rat.location.coordinates[1]}
@@ -65,5 +68,17 @@ class Map extends React.Component {
     );
   }
 }
+
+const ratType = PropTypes.shape({
+  createdDate: PropTypes.string,
+  location_type: PropTypes.string,
+  incident_address: PropTypes.string
+});
+
+Map.propTypes = {
+  rats: PropTypes.arrayOf(ratType).isRequired,
+  onRatClick: PropTypes.func.isRequired,
+  selectedRat: ratType
+};
 
 export default Map;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import "./App.css";
+import "../styles/App.css";
 import Map from "./Map";
 import RatInfo from "./RatInfo";
 

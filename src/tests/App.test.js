@@ -29,19 +29,8 @@ const mockRats = [
   }
 ];
 
-let wrapper;
-
-beforeEach(() => {
-  jest.resetModules();
-});
-
-afterEach(() => {
-  jest.clearAllMocks();
-  wrapper.unmount();
-});
-
-it("Should update selected rat when onRatClick is called", () => {
-  wrapper = shallow(<App />, {
+test("Should update selected rat when onRatClick is called", () => {
+  const wrapper = shallow(<App />, {
     disableLifecycleMethods: true
   });
 
@@ -74,13 +63,13 @@ describe("test successful ajax call on componentdidmount", () => {
     App = require("../components/App").default;
   });
 
-  it("Calls componentDidMount", () => {
+  test("Calls componentDidMount", () => {
     const spy = jest.spyOn(App.prototype, "componentDidMount");
     const wrapper = shallow(<App />);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 
-  it("Renders map after successful ajax call on componentDidMount", () => {
+  test("Renders map after successful ajax call on componentDidMount", () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
 
@@ -107,7 +96,7 @@ describe("test failed ajax call on componentdidmount", () => {
     axios = require("axios");
   });
 
-  it("Displays error message when ajax call fails on componentDidMount", () => {
+  test("Renders error message when ajax call fails on componentDidMount", () => {
     const wrapper = shallow(<App />);
     const instance = wrapper.instance();
     setImmediate(() => {
